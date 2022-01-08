@@ -1,0 +1,17 @@
+{
+    
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "breaking_bad",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "breaking_bad (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        }
+    ]
+}
