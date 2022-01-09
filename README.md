@@ -7,9 +7,9 @@
 
 ## Screens
 
-| Splash | Logo | Characters Screen |
+| Splash | Logo | No Internet |
 |:------:|:-------:|:-------:|
-|![](./splash.png)|![](./assets/images/logo.jpg)|![](./characters.png)|
-|Character Details Screen|Character Details Screen|Character Details Screen|
+|![](./splash.png)|![](./assets/images/logo.jpg)|![](./no-internet.jpg)|
+|Characters Screen |Character Details Screen|Character Details Screen|
 ||||
-|![](./character-details1.png)|![](./character-details2.png)|![](./character-details3.png)|
+|![](./characters.png)|![](./character-details1.png)|![](./character-details2.png)|

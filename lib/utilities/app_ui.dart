@@ -35,6 +35,8 @@ class _AppAssets {
   final logo = 'assets/images/logo.jpg';
   final splash = 'assets/images/breaking-bad-splash.jpg';
 
+  final noInternet = 'assets/animations/no-internet.json';
+
   final banner1 = 'assets/images/banner1.jpg';
   final banner2 = 'assets/images/banner2.jpg';
   final banner3 = 'assets/images/banner3.jpg';

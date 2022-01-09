@@ -1,5 +1,6 @@
 import 'package:breaking_bad/common.dart';
 import 'package:breaking_bad/logic/cubit/characters_cubit.dart';
+import 'package:flutter_offline/flutter_offline.dart';
 
 class CharactersScreen extends StatefulWidget {
   const CharactersScreen({Key? key}) : super(key: key);
@@ -92,37 +93,43 @@ class _CharactersScreenState extends State<CharactersScreen> {
         centerTitle: true,
         title: TextWidget('Characters'),
       ),
-      body: Column(
-        children: [
-          AppUi.shared.h10,
-          CardSwiperWidget(
-            images: [
-              AppUi.assets.banner1,
-              AppUi.assets.banner2,
-              AppUi.assets.banner3,
-              AppUi.assets.banner4,
-              AppUi.assets.banner5,
-            ],
-          ),
-          AppUi.shared.h10,
-          AppUi.shared.h10,
-          Expanded(
-            child: BlocBuilder<CharactersCubit, CharactersState>(
-              builder: (context, state) {
-                if (state is CharactersLoaded) {
-                  allCharacters = (state).characters;
-                  return gridViewBody();
-                } else {
-                  return Center(
-                    child: CircularProgressIndicator(
-                      color: AppUi.colors.appGreen,
-                    ),
-                  );
-                }
-              },
-            ),
-          ),
-        ],
+      body: OfflineBuilder(
+        connectivityBuilder: (context, connectivity, child) {
+          final bool connected = connectivity != ConnectivityResult.none;
+          if (connected) {
+            return Column(
+              children: [
+                AppUi.shared.h10,
+                CardSwiperWidget(
+                  images: [
+                    AppUi.assets.banner1,
+                    AppUi.assets.banner2,
+                    AppUi.assets.banner3,
+                    AppUi.assets.banner4,
+                    AppUi.assets.banner5,
+                  ],
+                ),
+                AppUi.shared.h10,
+                AppUi.shared.h10,
+                Expanded(
+                  child: BlocBuilder<CharactersCubit, CharactersState>(
+                    builder: (context, state) {
+                      if (state is CharactersLoaded) {
+                        allCharacters = (state).characters;
+                        return gridViewBody();
+                      } else {
+                        return const CircularProgressIndicatorWidget();
+                      }
+                    },
+                  ),
+                ),
+              ],
+            );
+          } else {
+            return const NoInternet();
+          }
+        },
+        child: const CircularProgressIndicatorWidget(),
       ),
     );
   }

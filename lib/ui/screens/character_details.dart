@@ -82,14 +82,10 @@ class CharacterDetails extends StatelessWidget {
                             ),
                           );
                         } else {
-                          return Container();
+                          return const SizedBox.shrink();
                         }
                       } else {
-                        return Center(
-                          child: CircularProgressIndicator(
-                            color: AppUi.colors.appGreen,
-                          ),
-                        );
+                        return const CircularProgressIndicatorWidget();
                       }
                     },
                   ),
@@ -129,51 +125,6 @@ class CharacterDetails extends StatelessWidget {
                   ),
                   const DividerWidget(endIndent: 235),
                   AppUi.shared.h10,
-                  // BlocBuilder<CharactersCubit, CharactersState>(
-                  //   builder: (context, state) {
-                  //     if (state is DeathLoaded) {
-                  //       var death = (state).death;
-                  //       return Column(
-                  //         mainAxisAlignment: MainAxisAlignment.start,
-                  //         crossAxisAlignment: CrossAxisAlignment.start,
-                  //         children: [
-                  //           TextRich(
-                  //             title: 'Death Cause : ',
-                  //             value: death[0].cause,
-                  //           ),
-                  //           const DividerWidget(endIndent: 235),
-                  //           TextRich(
-                  //             title: 'Last Words : ',
-                  //             value: death[0].lastWords,
-                  //           ),
-                  //           const DividerWidget(endIndent: 250),
-                  //           TextRich(
-                  //             title: 'Number Of Death : ',
-                  //             value: death[0].numberOfDeaths.toString(),
-                  //           ),
-                  //           const DividerWidget(endIndent: 205),
-                  //           TextRich(
-                  //             title: 'Death In Season : ',
-                  //             value: death[0].season.toString(),
-                  //           ),
-                  //           const DividerWidget(endIndent: 215),
-                  //           TextRich(
-                  //             title: 'Death In Episode : ',
-                  //             value: death[0].episode.toString(),
-                  //           ),
-                  //           const DividerWidget(endIndent: 215),
-                  //         ],
-                  //       );
-                  //     } else {
-                  //       return Center(
-                  //         child: CircularProgressIndicator(
-                  //           color: AppUi.colors.appGreen,
-                  //         ),
-                  //       );
-                  //     }
-                  //   },
-                  // ),
-                  // AppUi.shared.h10,
                   BlocBuilder<CharactersCubit, CharactersState>(
                     builder: (context, state) {
                       if (state is QuotesLoaded) {
@@ -209,11 +160,7 @@ class CharacterDetails extends StatelessWidget {
                           return Container();
                         }
                       } else {
-                        return Center(
-                          child: CircularProgressIndicator(
-                            color: AppUi.colors.appGreen,
-                          ),
-                        );
+                        return const CircularProgressIndicatorWidget();
                       }
                     },
                   ),
@@ -227,3 +174,45 @@ class CharacterDetails extends StatelessWidget {
     );
   }
 }
+// BlocBuilder<CharactersCubit, CharactersState>(
+                  //   builder: (context, state) {
+                  //     if (state is DeathLoaded) {
+                  //       var death = (state).death;
+                  //       return Column(
+                  //         mainAxisAlignment: MainAxisAlignment.start,
+                  //         crossAxisAlignment: CrossAxisAlignment.start,
+                  //         children: [
+                  //           TextRich(
+                  //             title: 'Death Cause : ',
+                  //             value: death[0].cause,
+                  //           ),
+                  //           const DividerWidget(endIndent: 235),
+                  //           TextRich(
+                  //             title: 'Last Words : ',
+                  //             value: death[0].lastWords,
+                  //           ),
+                  //           const DividerWidget(endIndent: 250),
+                  //           TextRich(
+                  //             title: 'Number Of Death : ',
+                  //             value: death[0].numberOfDeaths.toString(),
+                  //           ),
+                  //           const DividerWidget(endIndent: 205),
+                  //           TextRich(
+                  //             title: 'Death In Season : ',
+                  //             value: death[0].season.toString(),
+                  //           ),
+                  //           const DividerWidget(endIndent: 215),
+                  //           TextRich(
+                  //             title: 'Death In Episode : ',
+                  //             value: death[0].episode.toString(),
+                  //           ),
+                  //           const DividerWidget(endIndent: 215),
+                  //         ],
+                  //       );
+                  //     } else {
+                  //       return const CircularProgressIndicator();
+                  //     }
+                  //   },
+                  // ),
+                  // AppUi.shared.h10,
+                  
