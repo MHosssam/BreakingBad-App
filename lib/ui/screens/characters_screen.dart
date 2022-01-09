@@ -39,13 +39,11 @@ class _CharactersScreenState extends State<CharactersScreen> {
             borderRadius: BorderRadius.circular(8),
           ),
           child: InkWell(
-            onTap: () {
-              // Navigator.pushNamed(
-              //   context,
-              //   characterDetailsScreen,
-              //   arguments: character,
-              // );
-            },
+            onTap: () => Navigator.pushNamed(
+              context,
+              characterDetailsScreen,
+              arguments: character,
+            ),
             child: GridTile(
               child: Hero(
                 tag: character.charId,

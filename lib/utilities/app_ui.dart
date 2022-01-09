@@ -147,4 +147,6 @@ class _AppThemes {
 
 class _Others {
   final h10 = const SizedBox(height: 10);
+  final h20 = const SizedBox(height: 20);
+  final h40 = const SizedBox(height: 40);
 }

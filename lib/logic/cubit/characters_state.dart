@@ -10,3 +10,15 @@ class CharactersLoaded extends CharactersState {
 
   CharactersLoaded({required this.characters});
 }
+
+class QuotesLoaded extends CharactersState {
+  final List<QuoteModel> quotes;
+
+  QuotesLoaded(this.quotes);
+}
+
+class DeathLoaded extends CharactersState {
+  final List<DeathModel> death;
+
+  DeathLoaded(this.death);
+}

@@ -12,4 +12,18 @@ class CharactersRepo {
         .toList();
     return value;
   }
+
+  Future<List<QuoteModel>> getCharacterQuotes(String charName) async {
+    final qoutes = await characterServices.getCharacterQuotes(charName);
+    final value =
+        qoutes.map((charQuotes) => QuoteModel.fromJson(charQuotes)).toList();
+    return value;
+  }
+
+  Future<List<DeathModel>> getCharacterDeath(String charName) async {
+    final death = await characterServices.getCharacterDeath(charName);
+    final value =
+        death.map((chardeath) => DeathModel.fromJson(chardeath)).toList();
+    return value;
+  }
 }

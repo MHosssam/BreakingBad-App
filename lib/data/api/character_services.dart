@@ -19,6 +19,34 @@ class CharacterServices {
   Future<List<dynamic>> getAllCharacters() async {
     try {
       Response response = await dio.get(charactersApi);
+      // print(response.data.toString());
+      return response.data;
+    } catch (e) {
+      print(e.toString());
+      return [];
+    }
+  }
+
+  Future<List<dynamic>> getCharacterQuotes(String charName) async {
+    try {
+      Response response = await dio.get(
+        quotesApi,
+        queryParameters: {'author': charName},
+      );
+      print(response.data.toString());
+      return response.data;
+    } catch (e) {
+      print(e.toString());
+      return [];
+    }
+  }
+
+  Future<List<dynamic>> getCharacterDeath(String charName) async {
+    try {
+      Response response = await dio.get(
+        deathsApi,
+        queryParameters: {'author': charName},
+      );
       print(response.data.toString());
       return response.data;
     } catch (e) {

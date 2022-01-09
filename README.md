@@ -9,4 +9,8 @@
 
 |Screen 1| Screen 2| Screen 3|
 |:------:|:-------:|:-------:|
-|![](./Screenshot_1641737129.png)|![](./assets/images/logo.jpg)|![](./Screenshot_1641737129.png)|
+|![](./splash.png)|![](./assets/images/logo.jpg)|![](./characters.png)|
+|Screen 4|Screen 5|Screen 6|
+|:------:|:-------:|:-------:|
+||||
+|![](./character-details1.png)|![](./character-details2.png)|![](./character-details3.png)|
