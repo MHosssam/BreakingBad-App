@@ -7,10 +7,9 @@
 
 ## Screens
 
-|Screen 1| Screen 2| Screen 3|
+| Splash | Logo | Characters Screen |
 |:------:|:-------:|:-------:|
 |![](./splash.png)|![](./assets/images/logo.jpg)|![](./characters.png)|
-|Screen 4|Screen 5|Screen 6|
-|:------:|:-------:|:-------:|
+|Character Details Screen|Character Details Screen|Character Details Screen|
 ||||
 |![](./character-details1.png)|![](./character-details2.png)|![](./character-details3.png)|
